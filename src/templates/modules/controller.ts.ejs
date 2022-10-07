@@ -1,0 +1,54 @@
+import { NextFunction, Request, Response } from 'express';
+import <%= props.first %> from './<%= props.first %>.service';
+
+const index = async (request: Request, response: Response, next: NextFunction) => {
+  try {
+    const entity = await <%= props.first %>.index();
+    response.status(201).json(entity);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const store = async (request: Request, response: Response, next: NextFunction) => {
+  try {
+    const { body } = request;
+    const entity = await <%= props.first %>.store(body);
+    response.status(200).json(entity);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const show = async (request: Request, response: Response, next: NextFunction) => {
+  try {
+    const { id } = request.params;
+    const entity = await <%= props.first %>.show(id);
+    response.status(200).json(entity);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const update = async (request: Request, response: Response, next: NextFunction) => {
+  try {
+    const { id } = request.params;
+    const { body } = request;
+    const entity = await <%= props.first %>.update(id, body);
+    response.status(200).json(entity);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const destroy = async (request: Request, response: Response, next: NextFunction) => {
+  try {
+    const { id } = request.params;
+    const entity = await <%= props.first %>.destroy(id);
+    response.status(204).json(entity);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export default { index, store, show, update, destroy };
