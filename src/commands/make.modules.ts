@@ -34,7 +34,7 @@ module.exports = {
       await service(plural)
       await repository(plural)
       await model(plural)
-      // await dto(plural)
+      await idto(plural)
       await validator(plural)
     }
   },

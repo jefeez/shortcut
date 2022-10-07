@@ -4,7 +4,7 @@ import { GluegunToolbox } from 'gluegun'
 // to your commands
 
 const files = [
-  'tsconfig.json',
+  './tsconfig.json',
   'package.json',
   '.prettierrc',
   '.gitignore',
@@ -24,7 +24,7 @@ module.exports = (toolbox: GluegunToolbox) => {
 
     const alls = files.map(async (value) =>
       generate({
-        template: `bootstrap/${value}.ejs`,
+        template: `./bootstrap/${value}.ejs`,
         target: `./${first}/${value}`,
         props: { first },
       })
