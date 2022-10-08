@@ -1,6 +1,6 @@
 {
   "name": "@jefeez/shortcut.ts",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "shortcut CLI",
   "private": false,
   "repository": "https://github.com/jefeez/shortcut",
