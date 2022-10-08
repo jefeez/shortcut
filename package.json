@@ -3,6 +3,7 @@
   "version": "2.0.1",
   "description": "shortcut CLI",
   "private": false,
+  "repository": "https://github.com/jefeez/shortcut",
   "types": "build/types/types.d.ts",
   "bin": {
     "shortcut": "bin/shortcut"
