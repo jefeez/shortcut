@@ -16,5 +16,6 @@ module.exports = (toolbox: GluegunToolbox) => {
       target: `./src/app/modules/${first}/${first}.service.ts`,
       props: { first, upper },
     })
+    toolbox.print.info(`Generated service at ${first}.ts`)
   }
 }

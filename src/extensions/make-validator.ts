@@ -13,5 +13,6 @@ module.exports = (toolbox: GluegunToolbox) => {
       target: `./src/app/modules/${first}/${first}.validator.ts`,
       props: { first },
     })
+    toolbox.print.info(`Generated validator at ${first}.ts`)
   }
 }

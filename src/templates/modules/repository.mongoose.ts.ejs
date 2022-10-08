@@ -1,0 +1,29 @@
+import { <%= props.upper %> } from './<%= props.first %>.model';
+import { IDTO<%= props.upper %> } from './<%= props.first %>.dto';
+
+const findAll = async () => {
+  const entity = await <%= props.upper %>.find();
+  return entity;
+};
+
+const save = async (dto: IDTO<%= props.upper %>) => {
+  const entity = await <%= props.upper %>.create(dto);
+  return entity;
+};
+
+const findOne = async (id: any) => {
+  const entity = await <%= props.upper %>.findOne(id);
+  return entity;
+};
+
+const update = async (id: any, dto: Partial<IDTO<%= props.upper %>>) => {
+  const entity = await <%= props.upper %>.updateOne({ _id: id }, dto);
+  return entity;
+};
+
+const destroy = async (id: any) => {
+  const entity = await <%= props.upper %>.deleteOne({ _id:id });
+  return entity;
+};
+
+export default { findAll, findOne, save, update, destroy };

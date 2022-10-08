@@ -13,5 +13,7 @@ module.exports = (toolbox: GluegunToolbox) => {
       target: `./src/app/modules/${first}/${first}.controller.ts`,
       props: { first },
     })
+
+    toolbox.print.info(`Generated controller at ${first}.ts`)
   }
 }

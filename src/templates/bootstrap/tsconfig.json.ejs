@@ -6,9 +6,13 @@
     "baseUrl": "./src",
 
     "paths": {
-      "@modules/*":["./app/modules/*"]
+      "@modules/*":["./app/modules/*"],
+      "@providers/*":["./providers/*"],
+      "@env/*":["./env/*"]
     },
     "lib": ["esnext"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "strictNullChecks": false,
     "sourceMap": true,
     "allowJs": true,

@@ -13,5 +13,6 @@ module.exports = (toolbox: GluegunToolbox) => {
       target: `./src/app/modules/${first}/router.ts`,
       props: { first },
     })
+    toolbox.print.info(`Generated router at ${first}.ts`)
   }
 }

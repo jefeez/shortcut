@@ -1,0 +1,32 @@
+import { typeorm } from '@providers/typeorm';
+import { <%= props.upper %> } from './<%= props.first %>.model';
+import { IDTO<%= props.upper %> } from './<%= props.first %>.dto';
+
+const repository = typeorm.getRepository(<%= props.upper %>);
+
+const findAll = async () => {
+  const entity = await repository.find();
+  return entity;
+};
+
+const save = async (dto: IDTO<%= props.upper %>) => {
+  const entity = await repository.save(repository.create(dto));
+  return entity;
+};
+
+const findOne = async (id: any) => {
+  const entity = await repository.findOne(id);
+  return entity;
+};
+
+const update = async (id: any, dto: Partial<IDTO<%= props.upper %>>) => {
+  const entity = await repository.update(id, dto);
+  return entity;
+};
+
+const destroy = async (id: any) => {
+  const entity = await repository.delete(id);
+  return entity;
+};
+
+export default { findAll, findOne, save, update, destroy };

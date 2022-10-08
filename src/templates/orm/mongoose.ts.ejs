@@ -1,0 +1,11 @@
+import { database } from '@env/database';
+import mongoose from 'mongoose';
+
+mongoose
+  .connect(database.mongoose.url)
+  .then(() => {
+    console.log('INIT: Mongoose');
+  })
+  .catch(error => console.log(error));
+
+export { mongoose };

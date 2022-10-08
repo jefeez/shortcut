@@ -16,5 +16,7 @@ module.exports = (toolbox: GluegunToolbox) => {
       target: `./src/app/modules/${first}/${first}.dto.ts`,
       props: { first, upper },
     })
+
+    toolbox.print.info(`Generated dto at ${first}.ts`)
   }
 }
